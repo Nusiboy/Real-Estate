@@ -1,0 +1,46 @@
+#container-info{
+    height: 105vh;
+    display: flex;
+    padding: 1vw;
+    margin: 2.5vw;
+    background-color: rgb(208, 208, 116);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    font-family: "Oswald", sans-serif;
+    border-radius: 10vw;
+    justify-content: center;
+}
+
+#house-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+#location{
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+}
+
+#image-info{
+    display: flex;
+    width: 65vw;
+    height: 65vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-style: inset;
+  border-color: rgb(152, 159, 57);
+}
+/* #info-header{
+    display: flex;
+} */
+
+#information{
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,128 @@
+body {
+  background: rgb(216,218,212);
+  background: linear-gradient(180deg, rgba(216,218,212,1) 19%, rgba(196,199,185,1) 37%, rgba(191,194,169,1) 62%, rgba(217,219,192,1) 82%);
+
+}
+#container {
+  display: grid;
+  width: 320px;
+  padding: 1vw;
+  margin: 2vw;
+  background-color: rgb(208, 208, 116);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  font-family: "Oswald", sans-serif;
+  border-radius: 1vw;
+}
+#tablet-container {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 1.5vw;
+}
+#image {
+  width: 100%;
+  height: 70%;
+}
+#house-tablet-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3vw;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+#top-info{
+  font-size: 20px;
+}
+
+#info {
+  margin-left: 1vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: rgb(49, 49, 63);
+}
+a:visited{
+  text-decoration: none;  
+  color: rgb(49, 49, 63);
+
+}
+
+#selector {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    border-style: inset;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: inherit;
+    text-transform: capitalize;
+    border-radius: 10px;
+    background: #c9ff92;
+  margin-top: 5px;
+  text-align: center;
+
+}
+#option-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'oswald', sans-serif;
+  font-size: xxx-large;
+  
+}
+
+#selector-container{
+  display: flex;
+  height: 18vh;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 14vh;
+}
+
+
+#filter-city{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  outline: 0;
+  border-style: inset;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: inherit;
+  text-transform: capitalize;
+  border-radius: 10px;
+  background: #c9ff92;
+  text-align: center;
+
+}
+
+#favorite-btn{
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+  width: 15vw;
+  font-size: large;
+  font-weight: 600;
+  margin-left: 2vw;
+}
