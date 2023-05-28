@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Tablet from "./Tablet";
 import "./HouseInfo.css";
 
+import FavoriteHouse from "./FavoriteHouse";
 
-function favoriteEstates() {
+function FavoriteEstates() {
     const [favorite, setFavorite] = useState([]);
   
     useEffect(() => {
@@ -13,14 +13,13 @@ function favoriteEstates() {
         setFavorite(JSON.parse(storedFavorites));
       }
     }, []);
-  
     return (
-      <div>
+      <div id="house-tablet-container">
         {favorite.map((value, index) => (
-          <Tablet key={index} result={value} />
+          <FavoriteHouse key={index} result={value} />
         ))}
       </div>
     );
   }
-export default favoriteEstates;
+export default FavoriteEstates;
   

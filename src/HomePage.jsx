@@ -30,8 +30,8 @@ function HomePage() {
             <img className="img"
               src="https://www.compass.com/m/13/0de6b610-c3db-4e66-9c09-6dfbd01bef83/origin.jpg"
               alt=""
-              width="400px"  
-              height="400px"
+              width="350px"  
+              height="350px"
             />
             <h2>Omri Madmoni</h2>
             <h4 className="agent-info">
@@ -43,8 +43,8 @@ function HomePage() {
             <img className="img"
               src="https://www.compass.com/m/13/c964a8e7-671d-4a29-bf57-ca2f6c2b7a69/origin.jpg"
               alt=""
-              width="400px"
-              height="400px"
+              width="350px"
+              height="350px"
             />
             <h2>Elad Levi</h2>
             <h4 className="agent-info">
@@ -54,7 +54,7 @@ function HomePage() {
           </div>
           <div id="agent3">
             <img className="img"
-             src="photos\agent3.png" alt="" width="400px" height="400px" />
+             src="photos\agent3.png" alt="" width="350px" height="350px" />
             <h2>Gila Ashkenazi</h2>
             <h4 className="agent-info">
               Experience: 9 years <br />
