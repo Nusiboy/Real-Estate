@@ -1,14 +1,13 @@
 body {
-  background: rgb(216,218,212);
-  background: linear-gradient(180deg, rgba(216,218,212,1) 19%, rgba(196,199,185,1) 37%, rgba(191,194,169,1) 62%, rgba(217,219,192,1) 82%);
-
+  background: rgb(220,238,241);
+  background: linear-gradient(180deg, rgba(220,238,241,1) 25%, rgba(178,234,244,1) 50%, rgba(220,237,241,1) 75%);
 }
 #container {
   display: grid;
   width: 320px;
   padding: 1vw;
   margin: 2vw;
-  background-color: rgb(208, 208, 116);
+  background-image: linear-gradient( 135deg, #c3f1ed 10%, #2a89c5 100%);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
   font-family: "Oswald", sans-serif;
@@ -72,7 +71,8 @@ a:visited{
     font-size: inherit;
     text-transform: capitalize;
     border-radius: 10px;
-    background: #c9ff92;
+    background: rgb(97, 193, 231);
+    background: linear-gradient(180deg, rgb(173, 216, 236) 25%, rgb(163, 219, 234) 50%, rgb(173, 220, 240) 75%);
   margin-top: 5px;
   text-align: center;
 
@@ -110,19 +110,89 @@ a:visited{
   font-size: inherit;
   text-transform: capitalize;
   border-radius: 10px;
-  background: #c9ff92;
+  background: rgb(97, 193, 231);
+  background: linear-gradient(180deg, rgb(173, 216, 236) 25%, rgb(163, 219, 234) 50%, rgb(173, 220, 240) 75%);
   text-align: center;
 
 }
-
-#favorite-btn{
-  font-family: "Raleway", sans-serif;
+.con-like {
+  --red: rgb(255, 50, 100);
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+ margin-bottom: 1vh;
+ margin-left: 120px;
+}
+.con-like .like {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+.con-like .checkmark {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
-  width: 15vw;
-  font-size: large;
-  font-weight: 600;
-  margin-left: 2vw;
+}
+.con-like .outline,
+.con-like .filled {
+  fill: var(--red);
+  position: absolute;
+}
+.con-like .filled {
+  animation: kfr-filled 0.5s;
+  display: none;
+}
+.con-like .filled.activated {
+  animation: kfr-filled 0.5s;
+  display: block;
+}
+.con-like .celebrate {
+  position: absolute;
+  animation: kfr-celebrate 0.5s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+.con-like .celebrate.activated {
+  animation: kfr-celebrate 0.5s;
+  display: block;
+}
+.con-like .poly {
+  stroke: var(--red);
+  fill: var(--red);
+}
+.con-like .like:checked ~ .checkmark .filled {
+  display: block
+}
+.con-like .like:checked ~ .checkmark .celebrate {
+  display: block;
+}
+
+@keyframes kfr-filled {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+@keyframes kfr-celebrate {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    display: none;
+  }
 }

@@ -6,9 +6,11 @@ function Layout() {
   return (
     <div>
       <div className="container-navbar">
-        <h1 id="header">
-          <img id="logo" src="../photos/house_icon.png" alt="" /> Home Finder
+       <div><h1 id="header">
+         Home Finder
         </h1>
+        <img id="logo" src="../photos/house_icon.png" alt="" />
+        </div>
         <h4 id="secondery-header">Find your perfect home</h4>
         <div id="navbar">
           <nav className="topnav">
