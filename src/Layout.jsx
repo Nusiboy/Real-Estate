@@ -11,7 +11,7 @@ function Layout() {
         </h1>
         <img id="logo" src="../photos/house_icon.png" alt="" />
         </div>
-        <h4 id="secondery-header">Find your perfect home</h4>
+          <h4 id="secondery-header">Find your perfect home</h4>
         <div id="navbar">
           <nav className="topnav">
             <div id="nav-slection">

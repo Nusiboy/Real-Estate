@@ -1,12 +1,37 @@
 import data from "./data.json";
 import Tablet from "./Tablet";
-import { useState,useEffect } from "react";
-
-function HouseTablet() {
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+function HouseTablet({ result }) {
   const [detail, setDetail] = useState(data.results);
   const [fakeDetail, setFakeDetail] = useState(data.results);
-
   const [favorite, setFavorite] = useState([]);
+
+  const [posts, setPosts] = useState([]);
+  const [refresh, setRefresh] = useState();
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/posts/fetchposts")
+      .then(({ data }) => setPosts(data))
+      .catch((err) => console.log(err.message));
+  }, [refresh]);
+
+  const handleSubmitForm = async (e) => {
+    e.preventDefault();
+    const title = e.target[0].value;
+    const body = e.target[1].value;
+    const img = e.target[2].value;
+    try {
+      const { data: newPost } = await axios.post(
+        "http://localhost:3001/posts/publishpost",
+        { title, body, img }
+      );
+      setRefresh(Math.random());
+      console.log(newPost);
+    } catch (err) {
+      console.log(err.response.data);
+    }
+  };
 
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
@@ -23,13 +48,18 @@ function HouseTablet() {
   const addToFavorite = (item) => {
     console.log("favorite", favorite);
     console.log("item", item);
-    const existingFavorite = favorite.some((favItem)=>favItem?.zpid===item?.zpid);
+    const existingFavorite = favorite.some(
+      (favItem) => favItem?.zpid === item?.zpid
+    );
     console.log("existingFavorite", existingFavorite);
     console.log([...favorite, item]);
     if (!existingFavorite) {
       setFavorite([...favorite, item]);
     } else {
-      console.log("filtered",favorite.filter((favItem) => favItem.zpid !== item.zpid));
+      console.log(
+        "filtered",
+        favorite.filter((favItem) => favItem.zpid !== item.zpid)
+      );
       setFavorite(favorite.filter((favItem) => favItem.zpid !== item.zpid));
     }
   };
@@ -107,7 +137,7 @@ function HouseTablet() {
         </select>
       </div>
       <div id="house-tablet-container">
-        {detail &&  
+        {detail &&
           detail.map((value, index) => (
             <Tablet
               key={index}
